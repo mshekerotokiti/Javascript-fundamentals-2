@@ -25,7 +25,34 @@ console.log (age1);
 
 //function expression
 const calcAge2 = function (birthYear){
-    return 2040 - birthYear;
+    return 2037 - birthYear;
 }
 const age2 = calcAge2(1992);
 console.log (age1, age2);
+
+//arrow function
+const calcAge3 = birthYear => 2037 - birthYear;
+const age3 = calcAge3(1993);
+console.log (age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2023 - birthYear;
+    const retirement = 60 - age;
+    //return retirement
+    return `${firstName} retires in ${retirement} years.`;
+}
+console.log(yearsUntilRetirement (1999, 'Sharon'));
+console.log(yearsUntilRetirement (2020, 'Milan'));
+
+//Functions calling other functions
+function cutFruits(fruit){
+   return fruit * 4;
+}
+
+function smoothie (mangoes, bananas){
+ const mangoPieces =   cutFruits (mangoes);
+ const bananaPieces = cutFruits (bananas);
+ const mangoSmoothie = `Blend ${mangoPieces} pieces of mangoes and ${bananaPieces} pieces of bananas.`;
+    return mangoSmoothie;
+}
+console.log (smoothie (2, 3));
